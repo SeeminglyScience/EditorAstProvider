@@ -1,19 +1,19 @@
 ---
-Module Name: EditorAstPSDrive
+Module Name: EditorAstProvider
 Module Guid: 4725a33e-7393-4306-9fa2-f5da58831c75
 Download Help Link:
 Help Version: 1.0.0
 Locale: en-US
 ---
 
-# EditorAstPSDrive Module
+# EditorAstProvider Module
 
 ## Description
 
 EditorAstProvider is a PowerShell module that adds a PSDrive containing the abstract syntax tree (AST)
 of the current file. Requires VSCode or other PowerShellEditorServices enabled editor.
 
-## EditorAstPSDrive Cmdlets
+## EditorAstProvider Cmdlets
 
 ### [New-EditorAstPSDrive](New-EditorAstPSDrive.md)
 
