@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+    <ViewDefinitions>
+        <View>
+            <Name>AstContainer</Name>
+            <ViewSelectedBy>
+                <TypeName>AstContainer</TypeName>
+                <TypeName>AstLeaf</TypeName>
+            </ViewSelectedBy>
+            <GroupBy>
+                <PropertyName>PSParentPath</PropertyName>
+                <CustomControl>
+                    <CustomEntries>
+                        <CustomEntry>
+                            <CustomItem>
+                                <Frame>
+                                    <LeftIndent>4</LeftIndent>
+                                    <CustomItem>
+                                        <Text>Container: </Text>
+                                        <ExpressionBinding>
+                                            <ScriptBlock>
+                    $PSItem.PSParentPath.Replace(
+                        'Microsoft.PowerShell.SHiPS\SHiPS::EditorAstProvider#CurrentFileAst',
+                        'CurrentFile:')
+                                            </ScriptBlock>
+                                        </ExpressionBinding>
+                                        <NewLine />
+                                    </CustomItem>
+                                </Frame>
+                            </CustomItem>
+                        </CustomEntry>
+                    </CustomEntries>
+                </CustomControl>
+            </GroupBy>
+            <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Mode</Label>
+                        <Width>4</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>20</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>20</Width>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>Preview</Label>
+                        <Alignment>Left</Alignment>
+                    </TableColumnHeader>
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>SSItemMode</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Name</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>AstType</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock> $PSItem.Extent.Text </ScriptBlock>
+                            </TableColumnItem>
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+    </ViewDefinitions>
+</Configuration>
